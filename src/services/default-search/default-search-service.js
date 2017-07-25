@@ -25,6 +25,14 @@ class DefaultSearchService {
   find(params) {
     params = params || { query: {} };
 
+    let query = {};
+    if (params.query.searchTerm) query.title = { $regex: params.query.searchTerm };
+    if (params.query.authors) query.contributors = { $in: params.query.authors };
+    if (params.query.tags) query.nature = { $in: params.query.tags };
+    if (params.query.nature) query.nature = { $in: params.query.nature };
+    if (params.query.subject) query.subject = { $in: params.query.subject };
+    params.query = query;
+
     const documents = this.app.service('documents');
     return documents.find(params);
   }

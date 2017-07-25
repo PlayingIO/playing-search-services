@@ -334,9 +334,6 @@ function aggregateAll(hook, enrichers, options) {
   let promises = {};
   enrichers.forEach(enricher => {
     switch(enricher) {
-      case 'authors':
-        promises.authors = aggregateAuthors(hook, options);
-        break;
       case 'coverage':
         promises.coverage = aggregateCoverage(hook, options);
         break;
