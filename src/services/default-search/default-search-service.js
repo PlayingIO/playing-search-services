@@ -1,6 +1,8 @@
 import makeDebug from 'debug';
+import jsonic from 'jsonic';
 import { join } from 'path';
 import { plural } from 'pluralize';
+import fp from 'ramda';
 import defaultHooks from './default-search-hooks';
 
 const debug = makeDebug('playing:search-services:default-search');
@@ -25,13 +27,25 @@ class DefaultSearchService {
   find(params) {
     params = params || { query: {} };
 
-    let query = {};
-    if (params.query.searchTerm) query.title = { $regex: params.query.searchTerm };
-    if (params.query.authors) query.contributors = { $in: params.query.authors };
-    if (params.query.tags) query.nature = { $in: params.query.tags };
-    if (params.query.nature) query.nature = { $in: params.query.nature };
-    if (params.query.subject) query.subject = { $in: params.query.subject };
-    params.query = query;
+    const convert = function(field, op, value, options) {
+      if (value && !fp.isEmpty(value)) {
+        return { [field]: op? Object.assign({ [op]: value }, options) : value };
+      }
+      return null;
+    };
+
+    const parse = function(field, op, param) {
+      let value = param? jsonic(param) : null;
+      return convert(field, op, value);
+    };
+
+    params.query = fp.mergeAll([
+      convert('title', '$regex', params.query.searchTerm, { $options: 'i' }),
+      parse('contributors', '$in', params.query.authors),
+      parse('tags', '$in', params.query.tags),
+      parse('nature', '$in', params.query.nature),
+      parse('subjects', '$in', params.query.subjects),
+    ]);
 
     const documents = this.app.service('documents');
     return documents.find(params);
