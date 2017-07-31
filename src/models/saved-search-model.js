@@ -5,7 +5,8 @@ const fields = {
   title: { type: 'String', required: true  },
   sortBy: { type: 'String' },
   sortOrder: { type: 'String'  },
-  params: { type: 'Mixed' }
+  params: { type: 'Mixed' },
+  pageProvider: { type: 'String' }
 };
 
 export default function(app, name) {

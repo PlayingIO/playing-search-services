@@ -11,6 +11,7 @@ module.exports = function(options = {}) {
     },
     after: {
       all: [
+        // hooks.populate('params.collections', { service: 'collections', recursive: false }),
         hooks.presentEntity(SavedSearchEntity, options),
         hooks.responder()
       ]
