@@ -1,8 +1,9 @@
 import makeDebug from 'debug';
 import jsonic from 'jsonic';
 import { join } from 'path';
+import fp from 'mostly-func';
 import { plural } from 'pluralize';
-import fp from 'ramda';
+
 import defaultHooks from './default-search-hooks';
 
 const debug = makeDebug('playing:search-services:default-search');

@@ -1,7 +1,7 @@
 import assert from 'assert';
 import Promise from 'bluebird';
 import makeDebug from 'debug';
-import fp from 'ramda';
+import fp from 'mostly-func';
 
 const debug = makeDebug('playing:search-services:hooks');
 
