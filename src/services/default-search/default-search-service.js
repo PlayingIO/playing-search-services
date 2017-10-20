@@ -48,8 +48,8 @@ class DefaultSearchService {
       parse('subjects', '$in', params.query.subjects),
     ]);
 
-    const documents = this.app.service('documents');
-    return documents.find(params);
+    const svcDocuments = this.app.service('documents');
+    return svcDocuments.find(params);
   }
 }
 
