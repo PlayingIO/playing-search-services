@@ -35,10 +35,17 @@ class DefaultSearchService {
       return null;
     };
 
+    const copy = function(field, value) {
+      return { [field]: value };
+    };
+
     const parse = function(field, op, param) {
       let value = param? jsonic(param) : null;
       return convert(field, op, value);
     };
+
+    // TODO highlight
+    delete params.query.highlight;
 
     params.query = fp.mergeAll([
       convert('title', '$regex', params.query.searchTerm, { $options: 'i' }),
@@ -46,6 +53,7 @@ class DefaultSearchService {
       parse('tags', '$in', params.query.tags),
       parse('nature', '$in', params.query.nature),
       parse('subjects', '$in', params.query.subjects),
+      copy('$select', params.query.$select)
     ]);
 
     const svcDocuments = this.app.service('documents');
