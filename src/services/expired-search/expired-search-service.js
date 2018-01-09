@@ -25,7 +25,7 @@ class ExpiredSearchService {
   find(params) {
     params = params || { query: {} };
 
-    params.query.expired = { $lte: new Date() };
+    params.query.expiredAt = { $lte: new Date() };
     const svcDocuments = this.app.service('documents');
     return svcDocuments.find(params);
   }
