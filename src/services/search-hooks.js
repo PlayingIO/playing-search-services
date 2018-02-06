@@ -22,7 +22,7 @@ function aggregateAuthors(hook, options) {
               "administrators"
             ],
             "company":"",
-            "email":"devnull@nuxeo.com",
+            "email":"devnull@playingio.com",
             "username":"Administrator"
           },
           "isAdministrator":true,
