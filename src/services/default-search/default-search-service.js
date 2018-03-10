@@ -1,6 +1,5 @@
 import makeDebug from 'debug';
 import jsonic from 'jsonic';
-import { join } from 'path';
 import fp from 'mostly-func';
 import { plural } from 'pluralize';
 

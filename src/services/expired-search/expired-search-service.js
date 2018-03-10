@@ -1,6 +1,4 @@
 import makeDebug from 'debug';
-import { join } from 'path';
-import { plural } from 'pluralize';
 import defaultHooks from './expired-search-hooks';
 
 const debug = makeDebug('playing:search-services:expired-search');
