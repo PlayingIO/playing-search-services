@@ -5,7 +5,7 @@ import fp from 'mostly-func';
 
 const debug = makeDebug('playing:search-services:hooks');
 
-function aggregateAuthors(hook, options) {
+function aggregateAuthors (hook, options) {
   return Promise.resolve({
     "type":"terms",
     "buckets":[
@@ -35,7 +35,7 @@ function aggregateAuthors(hook, options) {
   });
 }
 
-function aggregateCoverage(hook, options) {
+function aggregateCoverage (hook, options) {
   return Promise.resolve({
     "type":"terms",
     "buckets":[
@@ -125,7 +125,7 @@ function aggregateCoverage(hook, options) {
   });
 }
 
-function aggregateCreatedAt(hook, options) {
+function aggregateCreatedAt (hook, options) {
   return Promise.resolve({
     "type": 'dateHistogram',
     "buckets":[
@@ -158,7 +158,7 @@ function aggregateCreatedAt(hook, options) {
   });
 }
 
-function aggregateUpdatedAt(hook, options) {
+function aggregateUpdatedAt (hook, options) {
   return Promise.resolve({
     "type": 'dateHistogram',
     "buckets":[
@@ -191,7 +191,7 @@ function aggregateUpdatedAt(hook, options) {
   });
 }
 
-function aggregateNature(hook, options) {
+function aggregateNature (hook, options) {
   return Promise.resolve({
     "type":"terms",
     "buckets":[
@@ -228,7 +228,7 @@ function aggregateNature(hook, options) {
   });
 }
 
-function aggregateSize(hook, options) {
+function aggregateSize (hook, options) {
   return Promise.resolve({
     "type":"range",
     "buckets":[
@@ -267,7 +267,7 @@ function aggregateSize(hook, options) {
   });
 }
 
-function aggregateSubjects(hook, options) {
+function aggregateSubjects (hook, options) {
   return Promise.resolve({
     "type":"terms",
     "buckets":[
@@ -330,7 +330,7 @@ function aggregateSubjects(hook, options) {
   });
 }
 
-function aggregateAll(hook, enrichers, options) {
+function aggregateAll (hook, enrichers, options) {
   let promises = {};
   enrichers.forEach(enricher => {
     switch(enricher) {
@@ -358,7 +358,7 @@ function aggregateAll(hook, enrichers, options) {
 }
 
 // Add aggregate metadata according to request header
-export function aggregateEnrichers(options = {}) {
+export function aggregateEnrichers (options = {}) {
   return (hook) => {
     assert(hook.type === 'after', `aggregateEnrichers must be used as a 'after' hook.`);
 

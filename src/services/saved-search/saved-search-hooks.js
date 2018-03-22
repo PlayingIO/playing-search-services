@@ -1,7 +1,7 @@
 import { hooks } from 'mostly-feathers-mongoose';
 import SavedSearchEntity from '~/entities/saved-search-entity';
 
-module.exports = function(options = {}) {
+module.exports = function (options = {}) {
   return {
     before: {
       all: [

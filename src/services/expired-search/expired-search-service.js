@@ -10,18 +10,18 @@ const defaultOptions = {
 
 // Expired search service to documents
 class ExpiredSearchService {
-  constructor(options) {
+  constructor (options) {
     options = Object.assign({}, defaultOptions, options);
     this.name = options.name;
     this.options = options;
   }
 
-  setup(app) {
+  setup (app) {
     this.app = app;
     this.hooks(defaultHooks(this.options));
   }
 
-  find(params) {
+  find (params) {
     params = fp.assign({ query: {} }, params);
 
     params.query.expiredAt = { $lte: new Date() };

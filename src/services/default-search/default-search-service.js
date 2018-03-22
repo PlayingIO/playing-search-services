@@ -13,32 +13,32 @@ const defaultOptions = {
 
 // Default search service to documents
 class DefaultSearchService {
-  constructor(options) {
+  constructor (options) {
     options = Object.assign({}, defaultOptions, options);
     this.name = options.name;
     this.options = options;
   }
 
-  setup(app) {
+  setup (app) {
     this.app = app;
     this.hooks(defaultHooks(this.options));
   }
 
-  find(params) {
+  find (params) {
     params = fp.assign({ query: {} }, params);
 
-    const convert = function(field, op, value, options) {
+    const convert = function (field, op, value, options) {
       if (value && !fp.isEmpty(value)) {
         return { [field]: op? Object.assign({ [op]: value }, options) : value };
       }
       return null;
     };
 
-    const copy = function(field, value) {
+    const copy = function (field, value) {
       return { [field]: value };
     };
 
-    const parse = function(field, op, param) {
+    const parse = function (field, op, param) {
       let value = param? jsonic(param) : null;
       return convert(field, op, value);
     };
