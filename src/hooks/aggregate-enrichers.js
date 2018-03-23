@@ -358,7 +358,7 @@ function aggregateAll (hook, enrichers, options) {
 }
 
 // Add aggregate metadata according to request header
-export function aggregateEnrichers (options = {}) {
+export default function aggregateEnrichers (options = {}) {
   return (hook) => {
     assert(hook.type === 'after', `aggregateEnrichers must be used as a 'after' hook.`);
 
