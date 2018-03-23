@@ -1,7 +1,7 @@
 import { hooks } from 'mostly-feathers-mongoose';
 import { aggregateEnrichers } from '../search-hooks';
 
-module.exports = function (options = {}) {
+export default function (options = {}) {
   return {
     before: {
       all: [
