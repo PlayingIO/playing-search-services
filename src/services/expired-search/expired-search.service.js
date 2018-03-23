@@ -1,6 +1,7 @@
 import makeDebug from 'debug';
 import fp from 'mostly-func';
-import defaultHooks from './expired-search-hooks';
+
+import defaultHooks from './expired-search.hooks';
 
 const debug = makeDebug('playing:search-services:expired-search');
 

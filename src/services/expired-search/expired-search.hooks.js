@@ -1,5 +1,6 @@
 import { hooks } from 'mostly-feathers-mongoose';
-import { aggregateEnrichers } from '../search-hooks';
+
+import { aggregateEnrichers } from '../../hooks';
 
 export default function (options = {}) {
   return {
@@ -15,4 +16,4 @@ export default function (options = {}) {
       ]
     }
   };
-};
+}

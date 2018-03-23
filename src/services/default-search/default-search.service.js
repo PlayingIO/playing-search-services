@@ -3,7 +3,7 @@ import jsonic from 'jsonic';
 import fp from 'mostly-func';
 import { plural } from 'pluralize';
 
-import defaultHooks from './default-search-hooks';
+import defaultHooks from './default-search.hooks';
 
 const debug = makeDebug('playing:search-services:default-search');
 
