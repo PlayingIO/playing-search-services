@@ -12,7 +12,7 @@ export default function (options = {}) {
     after: {
       all: [
         // hooks.populate('params.collections', { service: 'collections', recursive: false }),
-        hooks.presentEntity(SavedSearchEntity, options),
+        hooks.presentEntity(SavedSearchEntity, options.entities),
         hooks.responder()
       ]
     }
