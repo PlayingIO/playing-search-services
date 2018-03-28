@@ -1,9 +1,10 @@
-import { plugins } from 'mostly-feathers-mongoose';
-
 const options = {
   timestamps: true
 };
 
+/**
+ * Saved search
+ */
 const fields = {
   title: { type: String, required: true  },
   sortBy: { type: String },
