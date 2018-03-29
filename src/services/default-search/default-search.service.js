@@ -15,8 +15,7 @@ const defaultOptions = {
 class DefaultSearchService {
   constructor (options) {
     options = Object.assign({}, defaultOptions, options);
-    this.name = options.name;
-    this.options = options;
+    this.name = this.options.name;
   }
 
   setup (app) {
