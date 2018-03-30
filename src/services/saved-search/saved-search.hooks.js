@@ -1,6 +1,6 @@
 import { hooks } from 'mostly-feathers-mongoose';
 
-import SavedSearchEntity from '~/entities/saved-search.entity';
+import SavedSearchEntity from '../../entities/saved-search.entity';
 
 export default function (options = {}) {
   return {

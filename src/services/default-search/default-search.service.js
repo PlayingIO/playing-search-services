@@ -14,7 +14,7 @@ const defaultOptions = {
 // Default search service to documents
 class DefaultSearchService {
   constructor (options) {
-    options = Object.assign({}, defaultOptions, options);
+    this.options = Object.assign({}, defaultOptions, options);
     this.name = this.options.name;
   }
 
