@@ -12,7 +12,7 @@ const defaultOptions = {
 // Expired search service to documents
 class ExpiredSearchService {
   constructor (options) {
-    this.options = Object.assign({}, defaultOptions, options);
+    this.options = fp.assign(defaultOptions, options);
     this.name = this.options.name;
   }
 
