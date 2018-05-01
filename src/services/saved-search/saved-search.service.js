@@ -9,7 +9,7 @@ const defaultOptions = {
 
 class SavedSearchService extends Service {
   constructor (options) {
-    options = Object.assign({}, defaultOptions, options);
+    options = fp.assign(defaultOptions, options);
     super(options);
   }
 
@@ -20,7 +20,7 @@ class SavedSearchService extends Service {
 }
 
 export default function init (app, options, hooks) {
-  options = Object.assign({ ModelName: 'saved-search' }, options);
+  options = fp.assign({ ModelName: 'saved-search' }, options);
   return createService(app, SavedSearchService, SavedSearchModel, options);
 }
 
