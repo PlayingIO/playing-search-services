@@ -1,4 +1,5 @@
 import { Service, createService } from 'mostly-feathers-mongoose';
+import fp from 'mostly-func';
 
 import SavedSearchModel from '../../models/saved-search.model';
 import defaultHooks from './saved-search.hooks';
