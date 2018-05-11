@@ -24,7 +24,7 @@ class DefaultSearchService {
   }
 
   find (params) {
-    params = fp.assign({ query: {} }, params);
+    params = { query: {}, ...params };
 
     const convert = function (field, op, value, options) {
       if (value && !fp.isEmpty(value)) {

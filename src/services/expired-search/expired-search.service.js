@@ -22,7 +22,7 @@ class ExpiredSearchService {
   }
 
   find (params) {
-    params = fp.assign({ query: {} }, params);
+    params = { query: {}, ...params };
 
     params.query.expiredAt = { $lte: new Date() };
     const svcDocuments = this.app.service('documents');
