@@ -21,7 +21,7 @@ class SavedSearchService extends Service {
 }
 
 export default function init (app, options, hooks) {
-  options = fp.assign({ ModelName: 'saved-search' }, options);
+  options = { ModelName: 'saved-search', ...options };
   return createService(app, SavedSearchService, SavedSearchModel, options);
 }
 
