@@ -5,7 +5,7 @@ import SavedSearchModel from '../../models/saved-search.model';
 import defaultHooks from './saved-search.hooks';
 
 const defaultOptions = {
-  name: 'saved-search'
+  name: 'saved-searches'
 };
 
 class SavedSearchService extends Service {

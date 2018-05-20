@@ -3,10 +3,10 @@ import fp from 'mostly-func';
 
 import defaultHooks from './expired-search.hooks';
 
-const debug = makeDebug('playing:search-services:expired-search');
+const debug = makeDebug('playing:search-services:expired-searches');
 
 const defaultOptions = {
-  name: 'expired-search'
+  name: 'expired-searches'
 };
 
 // Expired search service to documents

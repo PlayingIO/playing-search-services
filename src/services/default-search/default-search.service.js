@@ -5,10 +5,10 @@ import { plural } from 'pluralize';
 
 import defaultHooks from './default-search.hooks';
 
-const debug = makeDebug('playing:search-services:default-search');
+const debug = makeDebug('playing:search-services:default-searches');
 
 const defaultOptions = {
-  name: 'default-search'
+  name: 'default-searches'
 };
 
 // Default search service to documents
