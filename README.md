@@ -1,7 +1,7 @@
 Playing Content Search Services
 ===============================
 
-Content search management microservices for playful applications.
+Content search management microservices for building playful applications.
 
 # Usage
 

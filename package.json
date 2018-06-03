@@ -1,7 +1,7 @@
 {
   "name": "playing-search-services",
   "version": "1.0.11",
-  "description": "Content search microservices for playful applications",
+  "description": "Content search microservices for building playful applications",
   "author": "Forafish",
   "license": "MIT",
   "main": "index.js",
