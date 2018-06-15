@@ -2,6 +2,6 @@ import Entity from 'mostly-entity';
 
 const SavedSearchEntity = new Entity('SavedSearch');
 
-SavedSearchEntity.excepts('_id');
+SavedSearchEntity.discard('_id');
 
 export default SavedSearchEntity.asImmutable();
