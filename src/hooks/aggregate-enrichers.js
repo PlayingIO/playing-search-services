@@ -372,7 +372,7 @@ export default function aggregateEnrichers (options = {}) {
     debug('enrichers-aggregate %j', enrichers);
 
     if (hook.result) {
-      return aggregateAll(hook, enrichers, options).then((results) => {
+      return aggregateAll(hook, enrichers, options).then(results => {
         hook.result.metadata = hook.result.metadata || {};
         hook.result.metadata.aggregations = results;
         return hook;
