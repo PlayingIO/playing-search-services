@@ -4,4 +4,4 @@ const SavedSearchEntity = new Entity('SavedSearch');
 
 SavedSearchEntity.discard('_id');
 
-export default SavedSearchEntity.asImmutable();
+export default SavedSearchEntity.freeze();
