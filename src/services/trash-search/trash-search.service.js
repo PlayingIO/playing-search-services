@@ -1,3 +1,4 @@
+import assert from 'assert';
 import makeDebug from 'debug';
 import fp from 'mostly-func';
 
@@ -25,8 +26,10 @@ class TrashSearchService {
 
   find (params) {
     params = { query: {}, ...params };
+    params.query.path = params.query.path || '/';
 
     params.query.destroyedAt = { $ne: null };
+    params.query.path = { $regex: new RegExp('^' + params.query.path, 'i') };
     const svcDocuments = this.app.service('documents');
     return svcDocuments.find(params);
   }
