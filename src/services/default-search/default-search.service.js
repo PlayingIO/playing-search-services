@@ -23,7 +23,7 @@ class DefaultSearchService {
     this.hooks(defaultHooks(this.options));
   }
 
-  find (params) {
+  async find (params) {
     params = { query: {}, ...params };
 
     const convert = function (field, op, value, options) {
