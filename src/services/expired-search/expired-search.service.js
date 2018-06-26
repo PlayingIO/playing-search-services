@@ -21,7 +21,7 @@ class ExpiredSearchService {
     this.hooks(defaultHooks(this.options));
   }
 
-  find (params) {
+  async find (params) {
     params = { query: {}, ...params };
 
     params.query.expiredAt = { $lte: new Date() };
