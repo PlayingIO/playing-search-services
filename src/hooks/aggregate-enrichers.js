@@ -1,7 +1,6 @@
-import assert from 'assert';
-import Promise from 'bluebird';
-import makeDebug from 'debug';
-import fp from 'mostly-func';
+const assert = require('assert');
+const Promise = require('bluebird');
+const makeDebug = require('debug');
 
 const debug = makeDebug('playing:search-services:hooks');
 
@@ -358,7 +357,7 @@ function aggregateAll (hook, enrichers, options) {
 }
 
 // Add aggregate metadata according to request header
-export default function aggregateEnrichers (options = {}) {
+module.exports = function aggregateEnrichers (options = {}) {
   return (hook) => {
     assert(hook.type === 'after', `aggregateEnrichers must be used as a 'after' hook.`);
 
@@ -379,4 +378,4 @@ export default function aggregateEnrichers (options = {}) {
       });
     }
   };
-}
+};

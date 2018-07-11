@@ -1,7 +1,7 @@
-import makeDebug from 'debug';
-import fp from 'mostly-func';
+const makeDebug = require('debug');
+const fp = require('mostly-func');
 
-import defaultHooks from './expired-search.hooks';
+const defaultHooks = require('./expired-search.hooks');
 
 const debug = makeDebug('playing:search-services:expired-searches');
 
@@ -30,8 +30,7 @@ class ExpiredSearchService {
   }
 }
 
-export default function init (app, options, hooks) {
+module.exports = function init (app, options, hooks) {
   return new ExpiredSearchService(options);
-}
-
-init.Service = ExpiredSearchService;
+};
+module.exports.Service = ExpiredSearchService;

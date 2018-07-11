@@ -1,5 +1,5 @@
-import aggregateEnrichers from './aggregate-enrichers';
+const aggregateEnrichers = require('./aggregate-enrichers');
 
-export {
+module.exports = {
   aggregateEnrichers
 };

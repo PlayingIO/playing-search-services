@@ -1,7 +1,7 @@
-import Entity from 'mostly-entity';
+const Entity = require('mostly-entity');
 
 const SavedSearchEntity = new Entity('SavedSearch');
 
 SavedSearchEntity.discard('_id');
 
-export default SavedSearchEntity.freeze();
+module.exports = SavedSearchEntity.freeze();

@@ -1,8 +1,8 @@
-import { hooks } from 'mostly-feathers-mongoose';
+const { hooks } = require('mostly-feathers-mongoose');
 
-import SavedSearchEntity from '../../entities/saved-search.entity';
+const SavedSearchEntity = require('../../entities/saved-search.entity');
 
-export default function (options = {}) {
+module.exports = function (options = {}) {
   return {
     before: {
       all: [
@@ -17,4 +17,4 @@ export default function (options = {}) {
       ]
     }
   };
-}
+};

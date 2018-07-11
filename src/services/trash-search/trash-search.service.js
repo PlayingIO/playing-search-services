@@ -1,8 +1,8 @@
-import assert from 'assert';
-import makeDebug from 'debug';
-import fp from 'mostly-func';
+const assert = require('assert');
+const makeDebug = require('debug');
+const fp = require('mostly-func');
 
-import defaultHooks from './trash-search.hooks';
+const defaultHooks = require('./trash-search.hooks');
 
 const debug = makeDebug('playing:search-services:trash-searches');
 
@@ -35,8 +35,7 @@ class TrashSearchService {
   }
 }
 
-export default function init (app, options, hooks) {
+module.exports = function init (app, options, hooks) {
   return new TrashSearchService(options);
-}
-
-init.Service = TrashSearchService;
+};
+module.exports.Service = TrashSearchService;

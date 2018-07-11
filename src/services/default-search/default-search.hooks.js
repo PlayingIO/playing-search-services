@@ -1,7 +1,7 @@
-import { hooks } from 'mostly-feathers-mongoose';
-import { aggregateEnrichers } from '../../hooks';
+const { hooks } = require('mostly-feathers-mongoose');
+const { aggregateEnrichers } = require('../../hooks');
 
-export default function (options = {}) {
+module.exports = function (options = {}) {
   return {
     before: {
       all: [
@@ -15,4 +15,4 @@ export default function (options = {}) {
       ]
     }
   };
-}
+};

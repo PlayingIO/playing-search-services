@@ -1,9 +1,9 @@
-import makeDebug from 'debug';
-import jsonic from 'jsonic';
-import fp from 'mostly-func';
-import { plural } from 'pluralize';
+const makeDebug = require('debug');
+const jsonic = require('jsonic');
+const fp = require('mostly-func');
+const { plural } = require('pluralize');
 
-import defaultHooks from './default-search.hooks';
+const defaultHooks = require('./default-search.hooks');
 
 const debug = makeDebug('playing:search-services:default-searches');
 
@@ -59,8 +59,7 @@ class DefaultSearchService {
   }
 }
 
-export default function init (app, options, hooks) {
+module.exports = function init (app, options, hooks) {
   return new DefaultSearchService(options);
-}
-
-init.Service = DefaultSearchService;
+};
+module.exports.Service = DefaultSearchService;

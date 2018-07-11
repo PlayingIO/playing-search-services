@@ -1,8 +1,8 @@
-import { Service, createService } from 'mostly-feathers-mongoose';
-import fp from 'mostly-func';
+const { Service, createService } = require('mostly-feathers-mongoose');
+const fp = require('mostly-func');
 
-import SavedSearchModel from '../../models/saved-search.model';
-import defaultHooks from './saved-search.hooks';
+const SavedSearchModel = require('../../models/saved-search.model');
+const defaultHooks = require('./saved-search.hooks');
 
 const defaultOptions = {
   name: 'saved-searches'
@@ -20,9 +20,8 @@ class SavedSearchService extends Service {
   }
 }
 
-export default function init (app, options, hooks) {
+module.exports = function init (app, options, hooks) {
   options = { ModelName: 'saved-search', ...options };
   return createService(app, SavedSearchService, SavedSearchModel, options);
-}
-
-init.Service = SavedSearchService;
+};
+module.exports.Service = SavedSearchService;
